@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://ecobin-vcf7.onrender.com/api/:path*"
+    },
+    {
+      "source": "/ws/:path*",
+      "destination": "https://ecobin-vcf7.onrender.com/ws/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+    "features": [
+        "capacity",
+        "temperature",
+        "rainfall",
+        "holiday",
+        "population_density",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "hours_since_collection",
+        "fill_lag_1h",
+        "fill_lag_2h",
+        "fill_lag_24h",
+        "fill_rolling_mean_6h",
+        "fill_rolling_std_6h",
+        "fill_rolling_mean_24h",
+        "fill_rolling_std_24h",
+        "temp_rain_interaction",
+        "area_Bus Stand",
+        "area_Commercial",
+        "area_Hospital",
+        "area_Industrial",
+        "area_Mall",
+        "area_Market",
+        "area_Park",
+        "area_Railway Station",
+        "area_Residential",
+        "area_Restaurant",
+        "area_School"
+    ],
+    "area_cols": [
+        "area_Bus Stand",
+        "area_Commercial",
+        "area_Hospital",
+        "area_Industrial",
+        "area_Mall",
+        "area_Market",
+        "area_Park",
+        "area_Railway Station",
+        "area_Residential",
+        "area_Restaurant",
+        "area_School"
+    ],
+    "rmse": 3.1562897449524203,
+    "results": {
+        "Baseline (Persistence)": {
+            "MAE": 41.77229444656247,
+            "RMSE": 45.19484021925254,
+            "MAPE": 62.5283946847672,
+            "R2": -6.984466722244857,
+            "Precision": 0.0,
+            "Recall": 0.0,
+            "F1": 0.0,
+            "FP": 0,
+            "FN": 3339
+        },
+        "Ridge Regression": {
+            "MAE": 4.039623089616984,
+            "RMSE": 5.369253332098283,
+            "MAPE": 6.308364591508764,
+            "R2": 0.8873072452756865,
+            "Precision": 0.871551724137931,
+            "Recall": 0.302785265049416,
+            "F1": 0.44943320737941767,
+            "FP": 149,
+            "FN": 2328
+        },
+        "XGBoost Regressor": {
+            "MAE": 2.0438516532276467,
+            "RMSE": 3.1562897449524203,
+            "MAPE": 3.1120703095139506,
+            "R2": 0.9610576699703057,
+            "Precision": 0.8916274012323305,
+            "Recall": 0.7367475292003594,
+            "F1": 0.8068219088225648,
+            "FP": 299,
+            "FN": 879
+        }
+    }
+}

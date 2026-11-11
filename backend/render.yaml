@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ecobin-smart-waste-backend
+    env: python
+    region: singapore
+    plan: free
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PORT
+        value: 8000
+      - key: HOST
+        value: 0.0.0.0
+      # DATABASE_URL: Set in Render dashboard → Environment tab
+      # Use your Neon PostgreSQL URL: postgresql://user:pass@host/dbname?sslmode=require
+      # Do NOT set it here — blueprint values override dashboard values
+      - key: CORS_ORIGINS
+        value: "*"
