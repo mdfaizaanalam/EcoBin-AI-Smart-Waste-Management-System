@@ -506,22 +506,22 @@ EcoBin connects the **Municipal Administrator**, **Sanitation Driver**, **Field 
                                  └────────────┬─────────────┘
                                               │ (Waste Ingestion / Report)
                                               ▼
- ┌──────────────────────────┐    WebSocket    ┌──────────────────────────┐
- │  PHYSICAL IOT EDGE NODE  │ <=============> │  CENTRAL FASTAPI ENGINE  │
- │ • JSN-SR04T Depth Telemetry│ (JSON Ingestion│ • XGBoost 24h Forecasting│
- │ • DHT22 Microclimate Read │  <15ms Latency)│ • Google OR-Tools CVRP   │
- │ • TP4056 Solar Harvest   │                │ • SQLAlchemy Multi-City  │
- └─────────────┬────────────┘                └────────────┬─────────────┘
+ ┌────────────────────────────┐    WebSocket     ┌──────────────────────────┐
+ │  PHYSICAL IOT EDGE NODE    │ <=============>  │  CENTRAL FASTAPI ENGINE  │
+ │ • JSN-SR04T Depth Telemetry│ (JSON Ingestion  │ • XGBoost 24h Forecasting│
+ │ • DHT22 Microclimate Read  │  <15ms Latency)  │ • Google OR-Tools CVRP   │
+ │ • TP4056 Solar Harvest     │                  │ • SQLAlchemy Multi-City  │
+ └─────────────┬──────────────┘                  └────────────┬─────────────┘
                │                                          │
     Anomaly /  │                                          │ Real-Time Route
     Low Battery│                                          │ & Work Orders
                ▼                                          ▼
- ┌──────────────────────────┐                ┌──────────────────────────┐
- │ FIELD TECHNICIAN (/mnt)  │                │ SANITATION DRIVER (/drv) │
- │ • Instant Fault Alert    │                │ • Dynamic GPS Turn-by-Turn│
- │ • On-Site Sensor Repair  │                │ • QR Scan Pickup Audit   │
- │ • Re-Calibrate IoT Node  │                │ • Bin Fill Zeroed to 0%  │
- └─────────────┬────────────┘                └────────────┬─────────────┘
+ ┌──────────────────────────┐                ┌────────────────────────────┐
+ │ FIELD TECHNICIAN (/mnt)  │                │ SANITATION DRIVER (/drv)   │
+ │ • Instant Fault Alert    │                │ • Dynamic GPS Turn-by-Turn │
+ │ • On-Site Sensor Repair  │                │ • QR Scan Pickup Audit     │
+ │ • Re-Calibrate IoT Node  │                │ • Bin Fill Zeroed to 0%    │
+ └─────────────┬────────────┘                └────────────┬───────────────┘
                │                                          │
                └───────────────────┬──────────────────────┘
                                    │ Real-time Telemetry & KPIs
